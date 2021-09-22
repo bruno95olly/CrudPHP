@@ -13,7 +13,7 @@
 require_once('../functions/config.php');
 
 //import do arquivo para inserir os dados do cliente
-require_once('../bd/inserirCliente.php');
+require_once(SRC.'bd/inserirCliente.php');
 
 //Declaração de variaveis
 	$nome = (string) null;
@@ -64,8 +64,19 @@ require_once('../bd/inserirCliente.php');
 			);
 
 		//chama a funcao inserir do arquivo inserirClientes e encaminha o array com os dados do cliente.
-			inserir($clientes);
+			if(inserir($clientes)){
+				echo("<script>
+						alert('". BD_MSG_INSERIR ."');
+						window.location.href = '../index.php';
+					</script>");
+			}
+			else{
+				echo("<script>
+						alert('". BD_MSG_ERRO ."');
+						window.history.back();
+					</script>");
+			}
+
 		}
-		
 	}
  ?>

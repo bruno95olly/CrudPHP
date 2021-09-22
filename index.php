@@ -1,6 +1,7 @@
 <?php
-    require_once('bd/conexaoMysql.php');
-    conexaoMysql();
+    require_once('functions/config.php');
+    require_once(SRC . 'bd/conexaoMysql.php');
+    //conexaoMysql();
 ?>
 
 

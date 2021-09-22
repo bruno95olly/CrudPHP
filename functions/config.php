@@ -21,6 +21,11 @@
 
 	const ERRO_CAIXA_VAZIA = 'Não foi possivel realizar a operação, pois existem campos obrigatórios a serem preenchidos.';
 
-	const ERRO_MAXLENGHT = 'não ultrapasse limites que vc nao pode ultrapassar, seu otario!'
+	const ERRO_MAXLENGHT = 'não ultrapasse limites que vc nao pode ultrapassar, seu otario!';
+//Mensagens de aceitação e validação de dados no BD
+	const BD_MSG_INSERIR = 'Registro salvo com sucesso no banco de dados';
+	const BD_MSG_ERRO = 'ERRO: Não foi possivel manipular os dados no Banco de Dados';
 
+// CONSTANTE PARA INDICAR A PASTA RAIZ DO SERVIDOR + ESTRUTURA DE DIRETORIO 
+	define ('SRC', $_SERVER['DOCUMENT_ROOT'].'/ds2t20212/myLocalBackEnd/AULA13/crud/');
  ?>

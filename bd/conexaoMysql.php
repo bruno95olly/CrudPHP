@@ -9,7 +9,7 @@
 
 //Abre a conexão com a base de dado MySQL:
 	function conexaoMysql(){
-		require_once('../functions/config.php');
+	//require_once('functions/config.php');
 
 	//Declaração de variaveis para conexao com BD:
 		$server = (string) BD_SERVER;

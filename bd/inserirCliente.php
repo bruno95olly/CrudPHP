@@ -35,10 +35,18 @@ require_once('../bd/conexaoMysql.php');
 			'".$clientesArray['email']."',
 			'".$clientesArray['obs']."'
 		)";
+
+
+
 	//chamando a função que estabelece a função com o banco de dados.
 		$conexao = conexaoMysql();
-
-		mysqli_query($conexao, $sql);
+		if (mysqli_query($conexao, $sql)) {
+			return true;
+		}
+		else{
+			return false;
+		}
+		
 	}
 
  ?>
