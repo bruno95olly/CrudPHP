@@ -1,7 +1,8 @@
 <?php
     require_once('functions/config.php');
     require_once(SRC . 'bd/conexaoMysql.php');
-    //conexaoMysql();
+    require_once(SRC . 'controles/exibeDadosClientes.php');
+    conexaoMysql();
 ?>
 
 
@@ -11,7 +12,6 @@
         <meta charset="UTF-8">
         <title> Cadastro </title>
         <link rel="stylesheet" type="text/css" href="style/style.css">
-
     </head>
     <body>
         <div id="cadastro">
@@ -43,7 +43,7 @@
                             <label> CPF: </label>
                         </div>
                         <div class="cadastroEntradaDeDados">
-                            <input type="text" name="txtCPF" value="" maxlength="20">
+                            <input id="cpf" type="text" name="txtCPF" value="" maxlength="20">
                         </div>
                     </div>
                     <div class="campos">
@@ -99,16 +99,36 @@
                     <td class="tblColunas destaque"> Email </td>
                     <td class="tblColunas destaque"> Opções </td>
                 </tr>
+
+                <?php 
+
+                    $dadosClientes = exibirClientes();
+
+                    while($rsClientes=mysqli_fetch_assoc($dadosClientes)){
+
+                 ?>
                 <tr id="tblLinhas">
-                    <td class="tblColunas registros"></td>
-                    <td class="tblColunas registros"></td>
-                    <td class="tblColunas registros"></td>
+                    <td class="tblColunas registros"> 
+                        <?=$rsClientes['nome']?> 
+                    </td>
+                    <td class="tblColunas registros">
+                        <?=$rsClientes['celular']?>
+                    </td>
+                    <td class="tblColunas registros">
+                        <?=$rsClientes['email']?>
+                    </td>
                     <td class="tblColunas registros">
                         <img src="img/edit.png" alt="Editar" title="Editar" class="editar">
                         <img src="img/trash.png" alt="Excluir" title="Excluir" class="excluir">
                         <img src="img/search.png" alt="Visualizar" title="Visualizar" class="pesquisar">
                     </td>
                 </tr>
+
+                <?php 
+                
+                    }
+
+                 ?>
             </table>
         </div>
     </body>

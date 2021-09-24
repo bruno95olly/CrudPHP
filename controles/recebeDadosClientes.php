@@ -76,7 +76,6 @@ require_once(SRC.'bd/inserirCliente.php');
 						window.history.back();
 					</script>");
 			}
-
 		}
 	}
  ?>
